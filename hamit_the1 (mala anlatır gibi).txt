@@ -1,0 +1,42 @@
+# Hamit Kartal
+#first, need to take the inputs
+
+x = int(input('Please enter the number of digits in padd-lock: '))
+y = int(input('Please enter the password length of the PC: '))
+z = float(input('Please enter the file size you want to transfer (GB): '))
+
+#need to calculate the possibilities of padd lock
+possibilities_of_padd_lock = 10**x
+
+#need to calculate the possibilities of comp. pass.
+possibilities_of_comp_password = 14**y
+
+#need to convert gb to mb
+total_size_of_file_in_mb = z * 1024
+
+#how many seconds our padd lock tool need to crack
+seconds_our_padd_lock_tool_need_to_crack = (10**x) / 1000
+
+#how many seconds our comp tool need to crack
+seconds_our_comp_tool_need_to_crack = (14**y) / 600000
+
+#how many seconds will pass while file is being transferred
+seconds_will_pass_while_file_is_being_transferred = (1024*z) / 60
+
+#what is total second
+total_second = seconds_our_padd_lock_tool_need_to_crack + seconds_our_comp_tool_need_to_crack + seconds_will_pass_while_file_is_being_transferred
+
+#lets convert second to minute and second
+minute = int(total_second // 60)
+remain_second = ((total_second / 60) - minute) * 60
+
+#lets convert minute to hour and minute
+hour = int(minute // 60)
+remain_minute = int(((minute / 60) - hour) * 60)
+
+
+#we have total hour and minute and second
+print("You need to distract the guard's attention for", hour, 'hour(s),', remain_minute, 'minute(s) and', format(remain_second, ".2f"), 'second(s).')
+# Hamit Kartal
+
+

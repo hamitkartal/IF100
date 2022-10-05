@@ -1,0 +1,23 @@
+print('Welcome to graduation estimator. Lets us serve you!')
+Su_credit = int(input('Please enter the SU Credits for the student: '))
+if 0 <= Su_credit <= 200:
+  if 125 <= Su_credit <= 200:
+    Ects_credit = int(input('Please enter the ECTS Credits for the student: '))
+    if 0 <= Ects_credit <= 400:
+      if 256 <= Ects_credit <= 400:
+        SPS303 = input('Please enter the SPS303 passing situation for the student: ')
+        if SPS303 == 'No' or SPS303 == 'Yes':
+          GPA = float(input('Please enter the GPA for the student: '))
+          if 0 <= GPA <= 4.00:
+            if 2.00 <= GPA <= 4.00:
+              print('This student can graduate.')
+            else:
+              print('This student cannot graduate.')
+          else:
+            print('Incorrect GPA!')
+        else:
+          print('Incorrect SPS303 passing situation!')          
+    else:
+      print('Incorrect ECTS Credits!')       
+else:
+  print('Incorrect SU Credits!')
